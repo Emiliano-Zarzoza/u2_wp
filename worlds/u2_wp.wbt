@@ -11,6 +11,20 @@ TexturedBackgroundLight {
 }
 Floor {
 }
+Solid {
+  translation 0.5700000000000001 0.05 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.20143434805828947 1 0.857145037003128
+      }
+      geometry DEF G_OBSTACLE Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject USE G_OBSTACLE
+}
 Robot {
   translation 0.1 0.075 0.1
   children [
@@ -53,6 +67,8 @@ Robot {
         }
         RotationalMotor {
           name "motor_right"
+          maxVelocity 8.3331
+          maxTorque 0.4903
         }
       ]
       endPoint DEF WHEEL1 Solid {
@@ -84,6 +100,8 @@ Robot {
       device [
         RotationalMotor {
           name "motor_left"
+          maxVelocity 8.3331
+          maxTorque 0.4903
         }
       ]
       endPoint Solid {
